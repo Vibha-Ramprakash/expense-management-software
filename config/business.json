@@ -1,0 +1,22 @@
+{
+  "productName": "Keel",
+  "organizationName": "Northstar Studio",
+  "accentColor": "#D9FF56",
+  "defaultCurrency": "EUR",
+  "categories": [
+    { "name": "Travel", "limitMinor": 120000 },
+    { "name": "Meals", "limitMinor": 7500 },
+    { "name": "Software", "limitMinor": 30000 },
+    { "name": "Equipment", "limitMinor": 80000 },
+    { "name": "Client costs", "limitMinor": 25000 }
+  ],
+  "approvers": [
+    { "id": "person-maya", "name": "Maya Chen", "email": "maya@northstar.example" },
+    { "id": "person-julian", "name": "Julian Hart", "email": "julian@northstar.example" }
+  ],
+  "reimbursement": {
+    "frequency": "weekly",
+    "weekday": "Friday",
+    "leadDays": 2
+  }
+}

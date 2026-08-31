@@ -1,0 +1,1 @@
+ALTER TABLE `assistant_answers` ADD `generation_json` text;

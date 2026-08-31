@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "project": {
+    "name": "Keel",
+    "productType": "expense reimbursement workflow",
+    "stack": [
+      "react",
+      "tailwind-v4",
+      "vite"
+    ]
+  },
+  "sources": {
+    "tokens": [
+      "app/globals.css"
+    ],
+    "components": [],
+    "assets": [],
+    "instructions": []
+  },
+  "design": {
+    "colorMode": "light",
+    "colors": {
+      "--background": {
+        "value": "#0a0a0a",
+        "source": "app/globals.css"
+      },
+      "--foreground": {
+        "value": "#ededed",
+        "source": "app/globals.css"
+      },
+      "--color-background": {
+        "value": "var(--background)",
+        "source": "app/globals.css"
+      },
+      "--color-foreground": {
+        "value": "var(--foreground)",
+        "source": "app/globals.css"
+      }
+    },
+    "typography": {
+      "--font-sans": {
+        "value": "var(--font-geist-sans)",
+        "source": "app/globals.css"
+      },
+      "--font-mono": {
+        "value": "var(--font-geist-mono)",
+        "source": "app/globals.css"
+      }
+    },
+    "spacing": {},
+    "radius": {},
+    "shadows": {},
+    "motion": {},
+    "density": "unknown"
+  },
+  "components": {
+    "installed": [],
+    "preferredPrimitives": [],
+    "patterns": []
+  },
+  "constraints": {
+    "must": [],
+    "avoid": []
+  },
+  "decisions": [
+    {
+      "decision": "Use an operational-paper direction with a near-black rail, a receipt workbench, compact workflow density, and one configurable high-visibility accent.",
+      "reason": "It makes policy and next actions legible without drifting into generic finance dashboard styling.",
+      "source": "docs/DESIGN_CONTRACT.md"
+    },
+    {
+      "decision": "Use literal workspace and section names for operate-mode headings; do not use promotional taglines or campaign-style subtitles.",
+      "reason": "The interface is complete operational software, so headings must identify the surface and support fast scanning.",
+      "source": "docs/DESIGN_CONTRACT.md"
+    }
+  ],
+  "evidence": [
+    {
+      "fact": "design.colorMode:light-and-dark",
+      "source": "app/globals.css"
+    },
+    {
+      "fact": "design.tokens",
+      "source": "app/globals.css"
+    },
+    {
+      "fact": "project.stack:react",
+      "source": "package.json"
+    },
+    {
+      "fact": "project.stack:tailwind-v4",
+      "source": "package.json"
+    },
+    {
+      "fact": "project.stack:vite",
+      "source": "package.json"
+    }
+  ],
+  "generatedAt": "2026-08-26T15:20:38.235Z"
+}

@@ -1,0 +1,3 @@
+# Codex runs npm run connect:ai and opens the masked local prompt.
+# Never put the real key in this example, a chat message, or source control.
+OPENAI_API_KEY=
