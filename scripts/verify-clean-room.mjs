@@ -4,6 +4,7 @@ import { mkdtemp, readFile, rm } from "node:fs/promises";
 import { createServer } from "node:net";
 import { tmpdir } from "node:os";
 import { basename, join, resolve } from "node:path";
+import { cleanRoomTemporaryBase } from "../lib/clean-room-path.mjs";
 import { decimalToMinorUnits } from "../lib/finance.mjs";
 import { nextReimbursementDate } from "../lib/reimbursement.mjs";
 
@@ -12,7 +13,15 @@ const git = process.platform === "win32" ? "git.exe" : "git";
 const npmCli = process.env.npm_execpath;
 if (!npmCli) throw new Error("Run this verifier through npm run acceptance:clean-room.");
 const keepClone = process.argv.includes("--keep");
-const temporaryRoot = await mkdtemp(join(tmpdir(), "keel-clean-room-"));
+// vinext's Cloudflare worker entry currently cannot be resolved reliably when
+// a Windows clean-room clone lives on a different drive from the checkout.
+// Prefer GitHub's runner temp (or the checkout parent) on the same drive.
+const temporaryBase = cleanRoomTemporaryBase({
+  sourceRoot,
+  systemTemp: tmpdir(),
+  runnerTemp: process.env.RUNNER_TEMP,
+});
+const temporaryRoot = await mkdtemp(join(temporaryBase, "keel-clean-room-"));
 const cloneRoot = join(temporaryRoot, "repo");
 const startedAt = new Date().toISOString();
 
